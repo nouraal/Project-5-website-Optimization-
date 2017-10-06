@@ -405,6 +405,7 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  // to optimize i used getElementById instead of querySelector 
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
@@ -425,6 +426,7 @@ var resizePizzas = function(size) {
 
     
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+  // to optimize i used getElementById instead of querySelector
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
     var windowWidth = document.getElementById("randomPizzas").offsetWidth;
@@ -451,8 +453,9 @@ var resizePizzas = function(size) {
   }
 
   // Iterates through pizza elements on the page and changes their widths
+  // creat var name randomPizSizes and replace it with  document.querySelectorAll(".randomPizzaContainer")
+  // to optimize i used getElementByClassName instead of querySelector 
   function changePizzaSizes(size) {
-
         randomPizSizes = document.getElementsByClassName("randomPizzaContainer");
         var dx = determineDx(document.getElementsByClassName("randomPizzaContainer")[i], size);
         var newwidth = (randomPizSizes[i].offsetWidth + dx) + 'px';
@@ -508,9 +511,15 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var items = document.getElementsByClassName('mover');
-  var top = document.body.scrollTop;
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(( top / 1250) + (i % 5));
+  var top = document.body.scrollTop / 1250;
+  var pArray = [];
+  var i;
+
+  for (i=0 ; i<5 ; i++){
+  pArray.push(Math.sin((top) + (i % 5)));
+  }
+  for (i = 0; i < items.length; i++) {
+    var phase = pArray [i % 5];
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -539,6 +548,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
+    // Replace document.querySelector to document.getElementById
     document.getElementById("movingPizzas1").appendChild(elem);
 
   }
