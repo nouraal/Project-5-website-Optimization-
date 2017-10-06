@@ -1,4 +1,4 @@
-Website Performance Optimization portfolio project Version 1.0 5/10/2017
+Website Performance Optimization portfolio project Version 1.1 5/10/2017
 ===============================
 
 it's Project Four in Frond-End Developer Nanodegree program from Udacity to optimize this online portfolio for speed!.
@@ -11,7 +11,7 @@ Instructions :
 
 1.  visit my github [here.](https://github.com/nouraal/frontend-nanodegree-mobile-portfolio-master)
 2. download ZIP file green button on the right of the screen,  then extract the zip file to your computer.
-3. to play the game  Double-click on " index.htm " to open the game in your browser.
+3. to open file  Double-click on " index.html " to open the portfolio in your browser.
 
 * Or you can opne the file online from [here.](https://nouraal.github.io/frontend-nanodegree-mobile-portfolio-master/)
 
@@ -31,7 +31,7 @@ for Optimize PageSpeed i did:
 
 ######PageSpeed result is:
 - for Mobile: 93
-- for Desktop: 95
+- for Desktop: 98
 
 ===============================
 
