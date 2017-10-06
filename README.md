@@ -29,7 +29,7 @@ for Optimize PageSpeed i did:
 5. Remove Google Fonts from the file.
 
 
-######PageSpeed result is:
+###### PageSpeed result is:
 - for Mobile: 93
 - for Desktop: 98
 
@@ -39,17 +39,19 @@ for Optimize PageSpeed i did:
 
 To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
 
-* optimize pizza.html:
+###### optimize pizza.html:
 1. compression pizzeria.jpg image and use .WebP to instead of .JPG
 2. compression pizza.png imge to be 13KB instead of 48KB.
 
-* optimize main.js:
+###### optimize main.js:
 1. Reduce the size of the array as much as possible 
 2. Replace document.querySelector to document.getElementById
 3. Replace document.querySelectorAll to document.getElementsByClassNam
 4. replace document.body.scrollTop with (document.documentElement.scrollTop || document.body.scrollTop), because it's not supported by chrome anymore.
 5. Reduce the number pizzas from 200 to 40 , to makes the page faster.
 
-* optimize css:
+###### optimize css:
 1. Added (backface-visibility: hidden) to the .mover class, to move each animated pizza to its own composite layer.
+
+* you can go to the Pizza page ftom [here.](https://nouraal.github.io/frontend-nanodegree-mobile-portfolio-master/views/pizza.html)
 ===============================
