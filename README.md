@@ -47,6 +47,8 @@ To optimize views/pizza.html, you will need to modify views/js/main.js until you
 1. Reduce the size of the array as much as possible 
 2. Replace document.querySelector to document.getElementById
 3. Replace document.querySelectorAll to document.getElementsByClassNam
+4. replace document.body.scrollTop with (document.documentElement.scrollTop || document.body.scrollTop), because it's not supported by chrome anymore.
+5. Reduce the number pizzas from 200 to 40 , to makes the page faster.
 
 * optimize css:
 1. Added (backface-visibility: hidden) to the .mover class, to move each animated pizza to its own composite layer.
